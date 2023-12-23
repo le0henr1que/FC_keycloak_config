@@ -12,7 +12,7 @@ services:
       - KC_DB=mysql
       - KC_DB_URL=jdbc:mysql://db:3306/keycloak
       - KC_DB_USERNAME=root
-      - KC_DB_PASSWORD=<DBPASSWORD> # This should match MYSQL_ROOT_PASSWORD
+      - KC_DB_PASSWORD=<DBPASSWORD>
       - KC_HOSTNAME=localhost
     ports:
       - 8080:8080
@@ -23,7 +23,7 @@ services:
   db:
     image: mysql:8.0.30-debian
     volumes:
-      - ./db:/var/lib/mysql
+      - ./.docker/db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=<DBPASSWORD>
       - MYSQL_DATABASE=keycloak
